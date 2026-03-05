@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { useRef } from "react";
+import { AllImages } from "../../public/images/AllImages";
 
 const AgencePage = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -10,20 +11,20 @@ const AgencePage = () => {
   const imageRef = useRef<HTMLImageElement | null>(null);
 
   const imageArray = [
-    "https://k72.ca/uploads/teamMembers/Carl_480x640-480x640.jpg",
-    "https://k72.ca/images/teamMembers/Olivier_480x640.jpg?w=480&h=640&fit=crop&s=c13569c0753117d04f1a93cf7b446d64",
-    "https://k72.ca/images/teamMembers/Lawrence_480x640…h=640&fit=crop&s=0a878205586092164001a9afe0ef4007",
-    "https://k72.ca/images/teamMembers/Lawrence_480x640.jpg?w=480&h=640&fit=crop&s=0a878205586092164001a9afe0ef4007",
-    "https://k72.ca/uploads/teamMembers/ChantalG_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MyleneS_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/SophieA_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Claire_480x640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/Michele_480X640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MEL_480X640-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/CAMILLE_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MAXIME_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/MEGGIE_480X640_2-480x640.jpg",
-    "https://k72.ca/uploads/teamMembers/joel_480X640_3-480x640.jpg",
+    AllImages.team1,
+    AllImages.team2,
+    AllImages.team3,
+    AllImages.team4,
+    AllImages.team5,
+    AllImages.team6,
+    AllImages.team7,
+    AllImages.team8,
+    AllImages.team9,
+    AllImages.team10,
+    AllImages.team11,
+    AllImages.team12,
+    AllImages.team13,
+    AllImages.team14,
   ];
 
   useGSAP(() => {
@@ -31,15 +32,10 @@ const AgencePage = () => {
       scrollTrigger: {
         trigger: imageDivRef.current,
         // markers: true,
-        start: "top 25%",
-        end: "top -125%",
+        start: "top 30%",
+        end: "top -110%",
         pin: true,
-        pinSpacing: true,
-        pinReparent: true,
-        pinType: "transform",
-        scrub: 2, // smooth scrubbing with 1s easing
-        anticipatePin: 2,
-        invalidateOnRefresh: true,
+
         onUpdate: (elem) => {
           let imageIndex;
           console.log("imageIndex", elem.progress);

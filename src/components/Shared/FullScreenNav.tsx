@@ -39,7 +39,7 @@ const FullScreenNav = ({ children }: { children: React.ReactNode }) => {
       y: "0%",
     });
 
-    gsap.from("#child", {
+    gsap.from(childRef.current, {
       opacity: 0,
       delay: 1.2,
     });
@@ -59,7 +59,7 @@ const FullScreenNav = ({ children }: { children: React.ReactNode }) => {
           <div className="stairing h-full w-1/5 bg-black"></div>
         </div>
       </div>
-      <div id="child">{children}</div>
+      <div ref={childRef}>{children}</div>
     </div>
   );
 };
